@@ -1,21 +1,24 @@
 {
   "name": "electron-screenshot-app",
   "version": "1.0.0",
-  "main": "main.ts",
-  "type": "module",
+  "description": "An electron app to cpature screenshots",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "electron": "^35.1.2"
+    "electron": "^35.1.2",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "axios": "^1.8.4",
-    "form-data": "^4.0.2",
     "uuid": "^11.1.0"
   }
 }
