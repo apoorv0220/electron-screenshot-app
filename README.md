@@ -15,7 +15,7 @@ This is a simple Electron desktop application that captures screenshots every mi
 
 ## Built application Usage
 
-1.  **Download dist:** Download the built app from: (https://drive.google.com/drive/folders/1HJqw_Gwvu2VwRvpFruGove-aS8qSwIKo?usp=drive_link)
+1.  **Download dist:** Download the built app from: ([https://drive.google.com/drive/folders/1HJqw_Gwvu2VwRvpFruGove-aS8qSwIKo?usp=drive_link](https://drive.google.com/drive/folders/1-bZCiEw1xQw7zsF1AUzkus4o0_q22OFf?usp=drive_link))
 2.  **Install the application:** Install the application through the Electro Screenshot App Setup executable.
 3.  **Run the application:** After installing the application, run the executable from install directory.
 4.  **Window and System Tray Icon:** The application will run in a window while also being present in the system tray. Note: App needs to be closed from system tray.
