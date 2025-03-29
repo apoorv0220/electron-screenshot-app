@@ -1,40 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Screenshot Monitor</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <title>Screenshot Monitor</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
 
-    .container {
-      text-align: center;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-    h1 {
-      color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    p {
-      color: #666;
-    }
-  </style>
+        p {
+            color: #666;
+        }
+
+        #countdown {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #999;
+        }
+
+        #screenshotCount {
+            font-size: 1.2em;
+            margin-top: 10px;
+            color: #999;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <h1>Screenshot Monitor is Running</h1>
     <p>Capturing screenshots every minute for 10 minutes. The app will close automatically after that.</p>
-  </div>
+    <div id="countdown"></div>
+    <div id="screenshotCount"></div>
+</div>
+
+<script>
+  window.electron.onTimerUpdate((event, timeLeft) => {
+      document.getElementById('countdown').innerText = `Time remaining: ${timeLeft} seconds`;
+  });
+
+  window.electron.onScreenshotCountUpdate((event, count) => {
+      document.getElementById('screenshotCount').innerText = `Screenshots taken: ${count}`;
+  });
+</script>
 </body>
 </html>

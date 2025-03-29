@@ -1,10 +1,9 @@
 {
   "name": "electron-screenshot-app",
   "version": "1.0.0",
-  "description": "An electron app to cpature screenshots",
+  "description": "An electron app to capture screenshots",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "dev": "electron .",
     "build": "electron-builder"
@@ -12,13 +11,37 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "electron": "^35.1.2",
     "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "axios": "^1.8.4",
-    "uuid": "^11.1.0"
+    "uuid": "^9.0.1",
+    "form-data": "^4.0.0"
+  },
+  "build": {
+    "appId": "com.example.electron-screenshot-app",
+    "productName": "Electron Screenshot App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "resources/**/*"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/nircmd.exe",
+        "to": "nircmd.exe"
+      }
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
   }
 }
